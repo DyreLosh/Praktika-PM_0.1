@@ -46,7 +46,6 @@ namespace WinAnim
             this.btnAW_BLEND.Invalidate();
             this.btnHOR_AW_SLIDE.Invalidate();
             this.btnCenter_AW_SLIDE.Invalidate();
-
         }
     }
 }

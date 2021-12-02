@@ -1,4 +1,4 @@
-﻿namespace WinAnim
+namespace WinAnim
 {
     partial class Form1
     {
