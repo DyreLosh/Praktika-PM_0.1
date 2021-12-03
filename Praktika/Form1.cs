@@ -17,26 +17,28 @@ namespace Praktika
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private BindingSource sotrBindingSourse;
+        private void Form1_Load(object sender, EventArgs e)
         {
-            System.Data.OleDb.OleDbDataReader myReader;
-            string CustomerString;
-            oleDbConnection1.Open();
-            myReader = oleDbCommand1.ExecuteReader();
-            while (myReader.Read())
-            {
-                CustomerString = myReader[1].ToString() + " " +
-                myReader[2].ToString();
-                listBox1.Items.Add(CustomerString);
-            }
-            myReader.Close();
-            oleDbConnection1.Close();
+            сотрудникиTableAdapter1.Fill(sotrudnikDataSet1.Сотрудники);
+            sotrBindingSourse = new
+           BindingSource(sotrudnikDataSet1, "Сотрудники");
+            FamtextBox.DataBindings.Add("Text", sotrBindingSourse,
+            "Фамилия");
+            NametextBox.DataBindings.Add("Text",
+           sotrBindingSourse, "Имя");
+            SectiontextBox.DataBindings.Add("Text",
+           sotrBindingSourse, "Отдел");
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Previousbutton_Click(object sender, EventArgs e)
         {
-            Form2 Exercise2 = new Form2();
-            Exercise2.Show();
+            sotrBindingSourse.MovePrevious();
+        }
+
+        private void Nextbutton_Click(object sender, EventArgs e)
+        {
+            sotrBindingSourse.MoveNext();
         }
     }
 }

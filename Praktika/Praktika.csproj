@@ -72,29 +72,15 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ProductDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ProductDataSet1.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ZakazDataSet.Designer.cs">
+    <Compile Include="sotrudnikDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ZakazDataSet.xsd</DependentUpon>
+      <DependentUpon>sotrudnikDataSet.xsd</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -105,17 +91,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="ProductDataSet1.xsc">
-      <DependentUpon>ProductDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="ProductDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ProductDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="ProductDataSet1.xss">
-      <DependentUpon>ProductDataSet1.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -125,16 +100,16 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="ZakazDataSet.xsc">
-      <DependentUpon>ZakazDataSet.xsd</DependentUpon>
+    <None Include="sotrudnikDataSet.xsc">
+      <DependentUpon>sotrudnikDataSet.xsd</DependentUpon>
     </None>
-    <None Include="ZakazDataSet.xsd">
+    <None Include="sotrudnikDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ZakazDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>sotrudnikDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="ZakazDataSet.xss">
-      <DependentUpon>ZakazDataSet.xsd</DependentUpon>
+    <None Include="sotrudnikDataSet.xss">
+      <DependentUpon>sotrudnikDataSet.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

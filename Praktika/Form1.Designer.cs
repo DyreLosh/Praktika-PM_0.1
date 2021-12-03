@@ -28,71 +28,129 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.oleDbConnection1 = new System.Data.OleDb.OleDbConnection();
-            this.oleDbCommand1 = new System.Data.OleDb.OleDbCommand();
+            this.sotrudnikDataSet1 = new Praktika.sotrudnikDataSet();
+            this.сотрудникиTableAdapter1 = new Praktika.sotrudnikDataSetTableAdapters.СотрудникиTableAdapter();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.FamtextBox = new System.Windows.Forms.TextBox();
+            this.NametextBox = new System.Windows.Forms.TextBox();
+            this.SectiontextBox = new System.Windows.Forms.TextBox();
+            this.Previousbutton = new System.Windows.Forms.Button();
+            this.Nextbutton = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.sotrudnikDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // sotrudnikDataSet1
             // 
-            this.button1.Location = new System.Drawing.Point(111, 26);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(196, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Click to Execute DataReader";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.sotrudnikDataSet1.DataSetName = "sotrudnikDataSet";
+            this.sotrudnikDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // listBox1
+            // сотрудникиTableAdapter1
             // 
-            this.listBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(0, 150);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(426, 199);
-            this.listBox1.TabIndex = 1;
+            this.сотрудникиTableAdapter1.ClearBeforeFill = true;
             // 
-            // button2
+            // label1
             // 
-            this.button2.Location = new System.Drawing.Point(111, 81);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(196, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Click here for Exercise 2";
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(56, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Фамилия";
             // 
-            // oleDbConnection1
+            // label2
             // 
-            this.oleDbConnection1.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Users\\Admin\\Desktop\\Git\\Praktika" +
-    "\\Product.mdb";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 59);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(29, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Имя";
             // 
-            // oleDbCommand1
+            // label3
             // 
-            this.oleDbCommand1.CommandText = "SELECT * FROM Заказчики";
-            this.oleDbCommand1.Connection = this.oleDbConnection1;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 94);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(38, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Отдел";
+            // 
+            // FamtextBox
+            // 
+            this.FamtextBox.Location = new System.Drawing.Point(105, 14);
+            this.FamtextBox.Name = "FamtextBox";
+            this.FamtextBox.Size = new System.Drawing.Size(100, 20);
+            this.FamtextBox.TabIndex = 3;
+            // 
+            // NametextBox
+            // 
+            this.NametextBox.Location = new System.Drawing.Point(105, 52);
+            this.NametextBox.Name = "NametextBox";
+            this.NametextBox.Size = new System.Drawing.Size(100, 20);
+            this.NametextBox.TabIndex = 4;
+            // 
+            // SectiontextBox
+            // 
+            this.SectiontextBox.Location = new System.Drawing.Point(105, 91);
+            this.SectiontextBox.Name = "SectiontextBox";
+            this.SectiontextBox.Size = new System.Drawing.Size(100, 20);
+            this.SectiontextBox.TabIndex = 5;
+            // 
+            // Previousbutton
+            // 
+            this.Previousbutton.Location = new System.Drawing.Point(269, 33);
+            this.Previousbutton.Name = "Previousbutton";
+            this.Previousbutton.Size = new System.Drawing.Size(75, 23);
+            this.Previousbutton.TabIndex = 6;
+            this.Previousbutton.Text = "Previous";
+            this.Previousbutton.UseVisualStyleBackColor = true;
+            this.Previousbutton.Click += new System.EventHandler(this.Previousbutton_Click);
+            // 
+            // Nextbutton
+            // 
+            this.Nextbutton.Location = new System.Drawing.Point(269, 74);
+            this.Nextbutton.Name = "Nextbutton";
+            this.Nextbutton.Size = new System.Drawing.Size(75, 23);
+            this.Nextbutton.TabIndex = 7;
+            this.Nextbutton.Text = "Next";
+            this.Nextbutton.UseVisualStyleBackColor = true;
+            this.Nextbutton.Click += new System.EventHandler(this.Nextbutton_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(426, 349);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(407, 298);
+            this.Controls.Add(this.Nextbutton);
+            this.Controls.Add(this.Previousbutton);
+            this.Controls.Add(this.SectiontextBox);
+            this.Controls.Add(this.NametextBox);
+            this.Controls.Add(this.FamtextBox);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.sotrudnikDataSet1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Button button2;
-        private System.Data.OleDb.OleDbConnection oleDbConnection1;
-        private System.Data.OleDb.OleDbCommand oleDbCommand1;
+        private sotrudnikDataSet sotrudnikDataSet1;
+        private sotrudnikDataSetTableAdapters.СотрудникиTableAdapter сотрудникиTableAdapter1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox FamtextBox;
+        private System.Windows.Forms.TextBox NametextBox;
+        private System.Windows.Forms.TextBox SectiontextBox;
+        private System.Windows.Forms.Button Previousbutton;
+        private System.Windows.Forms.Button Nextbutton;
     }
 }
 
