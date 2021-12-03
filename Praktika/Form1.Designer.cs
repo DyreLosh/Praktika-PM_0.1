@@ -1,4 +1,4 @@
-﻿namespace Praktika
+namespace WinAnim
 {
     partial class Form1
     {
@@ -117,6 +117,43 @@
             this.help.Text = "Help";
             this.help.UseVisualStyleBackColor = true;
             this.help.Click += new System.EventHandler(this.help_Click);
+            this.button2.Location = new System.Drawing.Point(270, 12);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "Cancel";
+            this.button2.UseVisualStyleBackColor = true;
+            this.btnAW_BLEND = new System.Windows.Forms.Button();
+            this.btnHOR_AW_SLIDE = new System.Windows.Forms.Button();
+            this.btnCenter_AW_SLIDE = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // btnAW_BLEND
+            // 
+            this.btnAW_BLEND.Location = new System.Drawing.Point(30, 62);
+            this.btnAW_BLEND.Name = "btnAW_BLEND";
+            this.btnAW_BLEND.Size = new System.Drawing.Size(232, 23);
+            this.btnAW_BLEND.TabIndex = 0;
+            this.btnAW_BLEND.Text = "Проявление";
+            this.btnAW_BLEND.UseVisualStyleBackColor = true;
+            // 
+            // btnHOR_AW_SLIDE
+            // 
+            this.btnHOR_AW_SLIDE.Location = new System.Drawing.Point(30, 118);
+            this.btnHOR_AW_SLIDE.Name = "btnHOR_AW_SLIDE";
+            this.btnHOR_AW_SLIDE.Size = new System.Drawing.Size(232, 23);
+            this.btnHOR_AW_SLIDE.TabIndex = 1;
+            this.btnHOR_AW_SLIDE.Text = "Горизонтальное проявление";
+            this.btnHOR_AW_SLIDE.UseVisualStyleBackColor = true;
+            // 
+            // btnCenter_AW_SLIDE
+            // 
+            this.btnCenter_AW_SLIDE.Location = new System.Drawing.Point(30, 182);
+            this.btnCenter_AW_SLIDE.Name = "btnCenter_AW_SLIDE";
+            this.btnCenter_AW_SLIDE.Size = new System.Drawing.Size(232, 23);
+            this.btnCenter_AW_SLIDE.TabIndex = 2;
+            this.btnCenter_AW_SLIDE.Text = "Появление в центре";
+            this.btnCenter_AW_SLIDE.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -138,6 +175,13 @@
             this.Text = "Асинхронный запуск";
             this.ResumeLayout(false);
             this.PerformLayout();
+            this.ClientSize = new System.Drawing.Size(281, 240);
+            this.Controls.Add(this.btnCenter_AW_SLIDE);
+            this.Controls.Add(this.btnHOR_AW_SLIDE);
+            this.Controls.Add(this.btnAW_BLEND);
+            this.Name = "Form1";
+            this.Text = "Анимация формы";
+            this.ResumeLayout(false);
 
         }
 
@@ -151,6 +195,9 @@
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.HelpProvider helpProvider1;
         private System.Windows.Forms.Button help;
+        private System.Windows.Forms.Button btnAW_BLEND;
+        private System.Windows.Forms.Button btnHOR_AW_SLIDE;
+        private System.Windows.Forms.Button btnCenter_AW_SLIDE;
     }
 }
 
