@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnRun = new System.Windows.Forms.Button();
             this.btnWork = new System.Windows.Forms.Button();
             this.lblA = new System.Windows.Forms.Label();
             this.lblB = new System.Windows.Forms.Label();
             this.txbA = new System.Windows.Forms.TextBox();
             this.txbB = new System.Windows.Forms.TextBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // btnRun
@@ -43,6 +45,7 @@
             this.btnRun.Size = new System.Drawing.Size(75, 23);
             this.btnRun.TabIndex = 0;
             this.btnRun.Text = "Сумма";
+            this.toolTip1.SetToolTip(this.btnRun, "Sum");
             this.btnRun.UseVisualStyleBackColor = true;
             this.btnRun.Click += new System.EventHandler(this.btnRun_Click);
             // 
@@ -53,6 +56,7 @@
             this.btnWork.Size = new System.Drawing.Size(75, 23);
             this.btnWork.TabIndex = 1;
             this.btnWork.Text = "Работа";
+            this.toolTip1.SetToolTip(this.btnWork, "Start work");
             this.btnWork.UseVisualStyleBackColor = true;
             this.btnWork.Click += new System.EventHandler(this.btnWork_Click);
             // 
@@ -80,6 +84,7 @@
             this.txbA.Name = "txbA";
             this.txbA.Size = new System.Drawing.Size(100, 20);
             this.txbA.TabIndex = 4;
+            this.toolTip1.SetToolTip(this.txbA, "For input integer A");
             // 
             // txbB
             // 
@@ -87,6 +92,7 @@
             this.txbB.Name = "txbB";
             this.txbB.Size = new System.Drawing.Size(100, 20);
             this.txbB.TabIndex = 5;
+            this.toolTip1.SetToolTip(this.txbB, "For input integer A");
             // 
             // Form1
             // 
@@ -113,6 +119,7 @@
         private System.Windows.Forms.Label lblB;
         private System.Windows.Forms.TextBox txbA;
         private System.Windows.Forms.TextBox txbB;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
 
