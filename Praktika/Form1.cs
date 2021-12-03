@@ -17,56 +17,45 @@ namespace Praktika
             InitializeComponent();
         }
 
-        private void textBox1_TextChanged(object sender, System.Windows.Forms.KeyPressEventArgs e)
+        private delegate int AsyncSumm(int a, int b);
+
+        private int Summ(int a, int b)
         {
-            if (!char.IsDigit(e.KeyChar))
+            System.Threading.Thread.Sleep(9000);
+            return a + b;
+        }
+
+        private void btnRun_Click(object sender, EventArgs e)
+        {
+            int a, b;
+            try
             {
-                e.Handled = true;
-                MessageBox.Show("Поле должно содержать цифры");
+                a = Int32.Parse(txbA.Text);
+                b = Int32.Parse(txbB.Text);
             }
-        }
-
-        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
-        {
-            int i;
-            i = int.Parse(e.Argument.ToString());
-            for ( int j=1; j <=i; j++ )
+            catch (Exception)
             {
-                if (backgroundWorker1.CancellationPending)
-                {
-                    e.Cancel = true;
-                    return;
-                }
-                System.Threading.Thread.Sleep(1000);
-                backgroundWorker1.ReportProgress((int)(j * 100 / i));
+                MessageBox.Show("При выполнение преоброзования типов возникла ошибка");
+                txbA.Text = txbB.Text = "";
+                return;
             }
+
+            AsyncSumm summdelegate = new AsyncSumm(Summ);
+            AsyncCallback cb = new AsyncCallback(CallBackMethod);
+            summdelegate.BeginInvoke(a, b, cb, summdelegate);
+        }
+        
+        private void CallBackMethod(IAsyncResult ar)
+        {
+            string str;
+            AsyncSumm summdelegate = (AsyncSumm)ar.AsyncState;
+            str = String.Format("Сумма введенных чисел равна {0}", summdelegate.EndInvoke(ar));
+            MessageBox.Show(str, "Результат операции");
         }
 
-        private void backgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        private void btnWork_Click(object sender, EventArgs e)
         {
-            progressBar1.Value = e.ProgressPercentage;
-        }
-
-        private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
-        {
-            if (!(e.Cancelled))
-                System.Windows.Forms.MessageBox.Show("Run Completed");
-            else
-                System.Windows.Forms.MessageBox.Show("Run Canceled");
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if(!(textBox1.Text == ""))
-            {
-                int i = int.Parse(textBox1.Text);
-                backgroundWorker1.RunWorkerAsync(i);
-            }
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            backgroundWorker1.CancelAsync();
+            MessageBox.Show("Работа кипит!!!");
         }
     }
 }
