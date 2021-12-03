@@ -57,5 +57,10 @@ namespace Praktika
         {
             MessageBox.Show("Работа кипит!!!");
         }
+
+        private void help_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, helpProvider1.HelpNamespace);
+        }
     }
 }
